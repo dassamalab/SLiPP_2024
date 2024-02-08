@@ -7,7 +7,7 @@ import os
 from Bio.PDB import *
 from pathlib import Path
 import json
-import poor_alphafold
+import slipp_utils
 import argparse
 
 NAME_CONVERSION = {'volume': 'pock_vol', 'number_of_alpha_spheres': 'nb_AS', 'mean_alpha_sphere_radius': 'mean_as_ray',
@@ -170,7 +170,7 @@ def main():
                         help='the number of signalP prediction files')
     parser.add_argument('-o', '--output', required=True, type=str, help='the output filename')
 
-    total_df = pd.read_csv('fivefold_full.csv')
+    total_df = pd.read_csv('train.csv')
     rfc = training(total_df)
     args = parser.parse_args()
     fpocket_info = batch_predict(rfc, args.input, args.signalpeptide)
