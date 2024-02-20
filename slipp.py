@@ -129,15 +129,15 @@ def batch_predict(model, file, num_json_files):
         folder_name, ids = retrieve_alphafold_structure(file)
         if num_json_files:
             for i in range(num_json_files):
-                poor_alphafold.batch_remove_signal_peptide(folder_name, f'{folder_name}_{i}.json')
+                slipp_utils.batch_remove_signal_peptide(folder_name, f'{folder_name}_{i}.json')
         for id_code in ids:
             parser = PDBParser()
             try:
                 structure = parser.get_structure('prot', f'{folder_name}/{id_code}.pdb')
             except:
                 continue
-            if poor_alphafold.extract_length(structure) > 100:
-                if poor_alphafold.extract_confidence_score(structure) > 70:
+            if slipp_utils.extract_length(structure) > 100:
+                if slipp_utils.extract_confidence_score(structure) > 70:
                     generate_fpocket_results_alphafold(folder_name, id_code)
                     raw_poc_info = export_parameters_from_fpocket(folder_name, id_code)
                     raw_poc_info = raw_poc_info.rename(columns=NAME_CONVERSION)
