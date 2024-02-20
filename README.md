@@ -15,3 +15,4 @@ The program extracts pocket information from given protein models and predict th
 python3 slipp.py -i inputFilename.txt [-s numberofSignalPoutput] -o outputFilename.csv
 ```
 -s numberofSignalPoutput: optional, an interger to specify how many json files you are ready to input for the signal peptide remover.
+8. The 'predicition' column is the SLiPP-predicted probability of being lipid-binding proteins
