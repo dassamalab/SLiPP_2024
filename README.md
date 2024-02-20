@@ -3,7 +3,7 @@ The program extracts pocket information from given protein models and predict th
 ## Requirments
 - Python 3.2+
 - [fpocket](https://github.com/Discngine/fpocket)
-- Used python packages: pandas, scikit-learn, biobb_vs, biopython
+- Used python packages: pandas v1.1.2, scikit-learn v0.23.2, biobb_vs v4.0.0, biopython v1.79
 ## Usage
 1. Download both python scripts
 2. Go to UniProt/PDB to download the list of IDs you want to predict and save it as txt files where one line is one ID
