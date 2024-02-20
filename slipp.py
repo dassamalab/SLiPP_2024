@@ -170,7 +170,7 @@ def main():
                         help='the number of signalP prediction files')
     parser.add_argument('-o', '--output', required=True, type=str, help='the output filename')
 
-    total_df = pd.read_csv('train.csv')
+    total_df = pd.read_csv('training_pockets.csv')
     rfc = training(total_df)
     args = parser.parse_args()
     fpocket_info = batch_predict(rfc, args.input, args.signalpeptide)
