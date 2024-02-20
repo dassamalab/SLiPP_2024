@@ -128,7 +128,7 @@ def batch_predict(model, file, num_json_files):
     else:
         folder_name, ids = retrieve_alphafold_structure(file)
         if num_json_files:
-            for i in range(num_json_files):
+            for i in range(1, num_json_files+1):
                 slipp_utils.batch_remove_signal_peptide(folder_name, f'{folder_name}_{i}.json')
         for id_code in ids:
             parser = PDBParser()
